@@ -1,12 +1,11 @@
-#ifndef GUARD_GBA_DEFINES
-#define GUARD_GBA_DEFINES
+#ifndef GUARD_GBA_DEFINES_H
+#define GUARD_GBA_DEFINES_H
 
 #include <stddef.h>
 
 #define TRUE  1
 #define FALSE 0
 
-#define BSS_DATA   __attribute__((section(".bss")))
 #define IWRAM_DATA __attribute__((section("iwram_data")))
 #define EWRAM_DATA __attribute__((section("ewram_data")))
 #define UNUSED __attribute__((unused))
@@ -68,6 +67,9 @@
 #define DISPLAY_WIDTH  240
 #define DISPLAY_HEIGHT 160
 
+#define DISPLAY_TILE_WIDTH  (DISPLAY_WIDTH / 8)
+#define DISPLAY_TILE_HEIGHT (DISPLAY_HEIGHT / 8)
+
 #define TILE_SIZE_4BPP 32
 #define TILE_SIZE_8BPP 64
 
@@ -76,4 +78,4 @@
 
 #define TOTAL_OBJ_TILE_COUNT 1024
 
-#endif // GUARD_GBA_DEFINES
+#endif // GUARD_GBA_DEFINES_H
